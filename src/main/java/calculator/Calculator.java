@@ -1,9 +1,9 @@
-import javax.ejb.Remote;
+package calculator;
+
 import javax.ejb.Stateless;
 
-@Remote
 @Stateless
-public class Calculator {
+public class Calculator implements CalculatorLocal,CalculatorRemote {
     public double add(double a, double b) {
         return a+b;
     }

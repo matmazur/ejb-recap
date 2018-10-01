@@ -1,3 +1,5 @@
+package calculator;
+
 import javax.ejb.Remote;
 
 @Remote
