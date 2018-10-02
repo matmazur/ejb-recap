@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "model.Task")
-@NamedQuery(name = "model.Task.findAll", query = "SELECT t from Task t")
+@Table(name = "Task")
+@NamedQuery(name = "Task.findAll", query = "SELECT t from Task t")
 public class Task {
 
 

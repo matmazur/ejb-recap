@@ -10,7 +10,7 @@
 <h2>Hello World!</h2>
 
 <form action="${pageContext.request.contextPath }" method="post">
-  <input type="text" name="taskName" placeholder="model.Task Name" />
+  <input type="text" name="taskName" placeholder="Task Name" />
   <input type="text" name="taskDesc" placeholder="description" />
   <input type="submit" value="Add" />
 </form>
