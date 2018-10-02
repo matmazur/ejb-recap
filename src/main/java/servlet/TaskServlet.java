@@ -1,6 +1,6 @@
 package servlet;
 
-import dao.TaskDAO;
+import dao.TaskDAORemote;
 import model.Task;
 
 import javax.inject.Inject;
@@ -17,7 +17,7 @@ public class TaskServlet extends HttpServlet {
 
 
     @Inject
-    TaskDAO dao;
+    TaskDAORemote dao;
 
 
     @Override

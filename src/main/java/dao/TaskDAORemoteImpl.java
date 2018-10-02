@@ -1,6 +1,5 @@
 package dao;
 
-import dao.TaskDAO;
 import model.Task;
 
 import javax.ejb.Stateless;
@@ -8,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Stateless
-public class TaskDAOImpl implements TaskDAO {
+public class TaskDAORemoteImpl implements TaskDAORemote {
 
     @PersistenceContext
     EntityManager entityManager;
@@ -34,13 +33,13 @@ public class TaskDAOImpl implements TaskDAO {
 
     @Override
     public void delete(Long id) {
-        entityManager.remove(entityManager.find(Task.class,id));
+        entityManager.remove(entityManager.find(Task.class, id));
     }
 
     @Override
     public List<Task> findAll() {
 
-        TypedQuery<Task> query = entityManager.createNamedQuery("Task.findAll",Task.class);
+        TypedQuery<Task> query = entityManager.createNamedQuery("Task.findAll", Task.class);
 
 
         return query.getResultList();
