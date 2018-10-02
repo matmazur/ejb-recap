@@ -40,8 +40,8 @@ public class TaskServlet extends HttpServlet {
             Task task = new Task();
             task.setDescription(desc);
             task.setName(name);
-
-            dao.create(task);
+//              changed methods in DAOImpl
+//            dao.create(task);
         }
         resp.sendRedirect(req.getContextPath());
 
