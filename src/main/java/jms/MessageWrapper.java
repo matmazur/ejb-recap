@@ -1,8 +1,10 @@
 package jms;
 
-public class MessageWrapper {
+import java.io.Serializable;
 
+public class MessageWrapper implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     private String message;
     private String toWhom;
 
@@ -11,7 +13,6 @@ public class MessageWrapper {
         this.message = message;
         this.toWhom = toWhom;
     }
-
 
     public String getMessage() {
         return message;
