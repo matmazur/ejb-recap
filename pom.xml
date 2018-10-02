@@ -7,6 +7,7 @@
     <groupId>groupId</groupId>
     <artifactId>ejb-recap</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
 
     <dependencyManagement>
         <dependencies>
