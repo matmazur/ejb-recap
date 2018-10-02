@@ -1,9 +1,11 @@
+package model;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Task")
-@NamedQuery(name = "Task.findAll", query = "SELECT t from Task t")
+@Table(name = "model.Task")
+@NamedQuery(name = "model.Task.findAll", query = "SELECT t from Task t")
 public class Task {
 
 
@@ -20,7 +22,7 @@ public class Task {
 
     @Override
     public String toString() {
-        return "Task{" +
+        return "model.Task{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +

@@ -1,3 +1,8 @@
+package dao;
+
+import dao.TaskDAO;
+import model.Task;
+
 import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.List;
