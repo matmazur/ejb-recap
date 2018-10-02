@@ -22,6 +22,11 @@
     </c:forEach>
   </ul>
 </c:if>
-</body>
+
+
+<a href="/first"> first servlet </a>>
+<a href="/second"> second servlet </a>>
+
+</>
 
 </html>
