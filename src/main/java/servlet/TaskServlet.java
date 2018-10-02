@@ -25,8 +25,8 @@ public class TaskServlet extends HttpServlet {
 
         List tasks = dao.findAll();
 
-        req.setAttribute("tasks",tasks);
-        req.getRequestDispatcher("index.jsp").forward(req,resp);
+        req.setAttribute("tasks", tasks);
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
 
     }
 
@@ -36,12 +36,13 @@ public class TaskServlet extends HttpServlet {
         String name = req.getParameter("taskName");
         String desc = req.getParameter("taskDesc");
 
+        if (!(name.trim().isEmpty() || desc.trim().isEmpty())) {
+            Task task = new Task();
+            task.setDescription(desc);
+            task.setName(name);
 
-        Task task  = new Task();
-        task.setDescription(desc);
-        task.setName(name);
-
-        dao.create(task);
+            dao.create(task);
+        }
         resp.sendRedirect(req.getContextPath());
 
     }
