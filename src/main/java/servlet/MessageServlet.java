@@ -1,6 +1,7 @@
 package servlet;
 
-import dao.SingletonCounter;
+import jms.MailService;
+import jms.MessageWrapper;
 
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -11,18 +12,25 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/first")
-public class FirstServlet extends HttpServlet {
+@WebServlet("/mail")
+public class MessageServlet extends HttpServlet {
 
 
     @Inject
-    SingletonCounter counter;
-
+    MailService service;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        resp.getWriter()
-                .println(counter.getVisits());
+        String recipient = req.getParameter("recipient");
+        String message = req.getParameter("message");
+
+        MessageWrapper wrapper = new MessageWrapper(message, recipient);
+
+        service.sendEmail(wrapper);
+
+
+        resp.sendRedirect("/");
+
     }
 }

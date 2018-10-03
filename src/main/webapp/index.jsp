@@ -9,24 +9,13 @@
 <body>
 <h2>Hello World!</h2>
 
-<form action="${pageContext.request.contextPath }" method="post">
-  <input type="text" name="taskName" placeholder="Task Name" />
-  <input type="text" name="taskDesc" placeholder="description" />
+<form action="/mail" method="post">
+  <input type="text" name="recipient" placeholder="Recipient Name" />
+  <input type="text" name="message" placeholder="message" />
   <input type="submit" value="Add" />
 </form>
 
-<c:if test="${not empty tasks}">
-  <ul>
-    <c:forEach var="task" items="${tasks}">
-      <li><c:out value="${task.name }" />: <c:out value="${task.description }" /></li>
-    </c:forEach>
-  </ul>
-</c:if>
 
 
-<a href="/first"> first servlet </a>>
-<a href="/second"> second servlet </a>>
-
-</>
-
+</body>
 </html>
