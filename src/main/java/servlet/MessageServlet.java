@@ -1,5 +1,6 @@
 package servlet;
 
+import jms.MailSender;
 import jms.MailService;
 import jms.MessageWrapper;
 
@@ -19,8 +20,14 @@ public class MessageServlet extends HttpServlet {
     @Inject
     MailService service;
 
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        resp.setContentType("text/html; charset=UTF-8");
+        resp.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
+
 
         String recipient = req.getParameter("recipient");
         String message = req.getParameter("message");

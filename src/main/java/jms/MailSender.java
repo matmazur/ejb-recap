@@ -6,8 +6,6 @@ import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
 
-
-
 @MessageDriven(activationConfig = {
         @ActivationConfigProperty(
                 propertyName = "destination",
@@ -15,20 +13,15 @@ import javax.jms.MessageListener;
 })
 public class MailSender implements MessageListener {
 
-
-
-
-
     @Override
     public void onMessage(Message message) {
 
-
-        MessageWrapper wrapper = null;
         try {
-            wrapper = message.getBody(MessageWrapper.class);
+            MessageWrapper wrapper = message.getBody(MessageWrapper.class);
 
             System.out.println("Msg goes to " + wrapper.getToWhom());
             System.out.println("Msg : " + wrapper.getMessage());
+
         } catch (JMSException e) {
             e.printStackTrace();
         }
